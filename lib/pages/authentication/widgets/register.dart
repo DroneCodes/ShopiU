@@ -3,6 +3,7 @@ import 'package:moni_test/pages/authentication/widgets/alreadyhaveanaccountcheck
 import 'package:moni_test/pages/authentication/widgets/donthaveanaccount.dart';
 import 'package:moni_test/pages/authentication/widgets/login.dart';
 import 'package:moni_test/pages/authentication/widgets/passwordfield.dart';
+import 'package:moni_test/pages/authentication/widgets/roundedinputemail.dart';
 import 'package:moni_test/pages/authentication/widgets/roundedinputfield.dart';
 
 class RegisterPage extends StatelessWidget {
@@ -65,7 +66,7 @@ class RegisterPage extends StatelessWidget {
                     SizedBox(
                       height: 10,
                     ),
-                    RoundedInputField(
+                    RoundedInputEmail(
                         hintText: "Enter your email",
                         icon: Icons.mail, onChanged: (value) {}),
                     SizedBox(

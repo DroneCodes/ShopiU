@@ -22,13 +22,20 @@ class _ProductMenuState extends State<ProductMenu> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             ProductList(
-                imageurl: "assets/images/kindpng_174783.png",
-                item: "Gaming",
-                subtitle: "Consoles, Controllers"),
+              // press: () {
+              //   Navigator.push(context,
+              //       MaterialPageRoute(builder: (context) {
+              //         return Gaming();
+              //       }));
+              // },
+              imageurl: "assets/images/kindpng_174783.png",
+              item: "Gaming",
+              subtitle: "Consoles, Controllers",),
             SizedBox(
               height: 20,
             ),
             ProductList(
+                // press: () {},
                 imageurl: "assets/images/kindpng_4886049.png",
                 item: "Sneakers",
                 subtitle: "Puma, Nike, Addidas")

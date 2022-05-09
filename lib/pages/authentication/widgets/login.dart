@@ -1,10 +1,7 @@
 
 import 'package:flutter/material.dart';
-import 'package:moni_test/controllers/textController.dart';
-import 'package:moni_test/pages/authentication/widgets/alreadyhaveanaccountcheck.dart';
 import 'package:moni_test/pages/authentication/widgets/donthaveanaccount.dart';
 import 'package:moni_test/pages/authentication/widgets/passwordfield.dart';
-import 'package:moni_test/pages/authentication/widgets/register.dart';
 import 'package:moni_test/pages/authentication/widgets/roundedinputfield.dart';
 import 'package:moni_test/pages/home_page.dart';
 class LoginPage extends StatelessWidget {

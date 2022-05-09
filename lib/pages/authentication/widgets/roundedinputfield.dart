@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:moni_test/constants/controllers.dart';
 import 'package:moni_test/pages/authentication/widgets/textfield.dart';
 
 class RoundedInputField extends StatelessWidget {
@@ -13,6 +14,7 @@ class RoundedInputField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextfieldContainer(
       child: TextField(
+        //controller: userController.username,
         onChanged: onChanged,
         decoration: InputDecoration(
           icon: Icon(
