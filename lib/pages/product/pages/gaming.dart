@@ -24,7 +24,7 @@ class Gaming extends StatelessWidget {
         centerTitle: true,
         actions: [
           IconButton(onPressed: () {}, icon: Icon(
-            Icons.shopping_cart, color: Colors.black,
+            Icons.shopping_cart, color: Colors.white,
           ))
         ],
       ),
