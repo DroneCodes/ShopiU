@@ -1,13 +1,20 @@
 
 import 'package:flutter/material.dart';
+import 'package:moni_test/pages/authentication/auth.dart';
 import 'package:moni_test/pages/authentication/widgets/donthaveanaccount.dart';
 import 'package:moni_test/pages/authentication/widgets/passwordfield.dart';
 import 'package:moni_test/pages/authentication/widgets/roundedinputfield.dart';
 import 'package:moni_test/pages/home_page.dart';
+import 'package:moni_test/pages/status/terms_conditions/buyerconditions.dart';
+import 'package:provider/provider.dart';
 class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final TextEditingController emailController = TextEditingController();
+    final TextEditingController passwordController = TextEditingController();
+    final authService = Provider.of<AuthService>(context);
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
@@ -17,7 +24,7 @@ class LoginPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Text(
-                  "Sign in",
+                  "Sign in as a Buyer",
                   style: TextStyle(
                       color: Colors.black, fontSize: 30, fontWeight: FontWeight.bold),),
 
@@ -29,19 +36,19 @@ class LoginPage extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: <Widget>[
-                      Text("Username",
-                        style: TextStyle(
-                            color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),),
                       SizedBox(
-                        height: 10,
+                        height: 30,
                       ),
                       RoundedInputField(
-                          hintText: "Enter your username",
-                          icon: Icons.person, onChanged: (value) {}),
+                          hintText: "Enter your Email",
+                          icon: Icons.person, onChanged: (value) {},
+                          emailcontroller: emailController,),
                       SizedBox(
                         height: 20,
                       ),
-                      Passwordfield(),
+                      Passwordfield(
+                        controller: passwordController,
+                      ),
                       SizedBox(
                         height: 20,
                       ),
@@ -66,8 +73,9 @@ class LoginPage extends StatelessWidget {
                         onPressed: () {
                           Navigator.push(context,
                               MaterialPageRoute(builder: (context) {
-                                return HomePage();
+                                return BuyerConditions();
                               }));
+                          authService.signInWithEmailAndPassword(emailController.text, passwordController.text);
                         },
                         child:
                         const Text("Log In",

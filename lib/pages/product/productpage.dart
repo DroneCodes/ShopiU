@@ -8,6 +8,7 @@ class ProductPageGrid {
   final String price;
   final String brand;
   final String imageurl;
+  int quantity = 0;
 
 
   ProductPageGrid(

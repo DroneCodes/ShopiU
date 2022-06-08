@@ -6,7 +6,7 @@ import 'package:moni_test/pages/drawerpages/devinfo.dart';
 import 'package:moni_test/pages/drawerpages/logout.dart';
 import 'package:moni_test/pages/drawerpages/settings.dart';
 
-class NavigationDrawer extends StatelessWidget {
+class Navigation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(

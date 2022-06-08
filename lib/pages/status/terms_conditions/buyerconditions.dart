@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:moni_test/pages/home_page.dart';
+import 'package:moni_test/pages/product/productmenu.dart';
 
 class BuyerConditions extends StatefulWidget {
   const BuyerConditions({Key? key}) : super(key: key);
@@ -15,7 +17,7 @@ class _BuyerConditionsState extends State<BuyerConditions> {
   void _doSomething() {
     Navigator.push(context,
         MaterialPageRoute(builder: (context) {
-          return LoginPage();
+          return HomePage();
         }));
   }
 
@@ -24,6 +26,7 @@ class _BuyerConditionsState extends State<BuyerConditions> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Conditions"),
+        centerTitle: true,
       ),
       body: Center(
         child: Column(

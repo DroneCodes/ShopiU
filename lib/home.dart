@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:moni_test/pages/authentication/widgets/login.dart';
+import 'package:moni_test/pages/status/user_status.dart';
 
 import 'pages/authentication/widgets/register.dart';
 
@@ -45,7 +46,7 @@ class Home extends StatelessWidget {
                       onPressed: () {
                         Navigator.push(context,
                             MaterialPageRoute(builder: (context) {
-                              return LoginPage();
+                              return UserStatus();
                             }));
                       },
                       child:

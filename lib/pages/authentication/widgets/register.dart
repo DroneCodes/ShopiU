@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:moni_test/pages/authentication/auth.dart';
 import 'package:moni_test/pages/authentication/widgets/alreadyhaveanaccountcheck.dart';
 import 'package:moni_test/pages/authentication/widgets/donthaveanaccount.dart';
 import 'package:moni_test/pages/authentication/widgets/login.dart';
 import 'package:moni_test/pages/authentication/widgets/passwordfield.dart';
 import 'package:moni_test/pages/authentication/widgets/roundedinputemail.dart';
 import 'package:moni_test/pages/authentication/widgets/roundedinputfield.dart';
+import 'package:provider/provider.dart';
 
 class RegisterPage extends StatelessWidget {
 
@@ -14,6 +16,10 @@ class RegisterPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final TextEditingController emailController = TextEditingController();
+    final TextEditingController passwordController = TextEditingController();
+    final authService = Provider.of<AuthService>(context);
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
@@ -54,9 +60,10 @@ class RegisterPage extends StatelessWidget {
                     SizedBox(
                       height: 10,
                     ),
-                    RoundedInputField(
+                    RoundedInput(
                         hintText: "Enter your username",
-                        icon: Icons.person, onChanged: (value) {}),
+                        icon: Icons.person, onChanged: (value) {},
+                        ),
                     SizedBox(
                       height: 20,
                     ),
@@ -66,9 +73,10 @@ class RegisterPage extends StatelessWidget {
                     SizedBox(
                       height: 10,
                     ),
-                    RoundedInputEmail(
+                    RoundedInputField(
                         hintText: "Enter your email",
-                        icon: Icons.mail, onChanged: (value) {}),
+                        icon: Icons.mail, onChanged: (value) {},
+                      emailcontroller: emailController,),
                     SizedBox(
                       height: 20,
                     ),
@@ -78,7 +86,9 @@ class RegisterPage extends StatelessWidget {
                     SizedBox(
                       height: 10,
                     ),
-                    Passwordfield(),
+                    Passwordfield(
+                      controller: passwordController,
+                    ),
                     SizedBox(
                       height: 20,
                     ),
@@ -96,11 +106,12 @@ class RegisterPage extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(
                           vertical: 20, horizontal: 40),
                       color: Colors.black,
-                      onPressed: () {
+                      onPressed: () async{
                         Navigator.push(context,
                             MaterialPageRoute(builder: (context) {
                               return LoginPage();
                             }));
+                        await authService.createUserWihEmilAndPassword(emailController.text, passwordController.text);
                       },
                       child:
                       const Text("Create Account",

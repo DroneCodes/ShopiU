@@ -3,6 +3,7 @@ import 'package:moni_test/drawer/dawer_item.dart';
 import 'package:moni_test/drawer/drawerheader.dart';
 import 'package:moni_test/pages/authentication/widgets/login.dart';
 import 'package:moni_test/pages/drawerpages/devinfo.dart';
+import 'package:moni_test/pages/drawerpages/logout.dart';
 import 'package:moni_test/pages/drawerpages/settings.dart';
 
 class NavigationDrawer extends StatelessWidget {
@@ -69,7 +70,7 @@ class NavigationDrawer extends StatelessWidget {
         break;
       case 2:
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => LoginPage()));
+            context, MaterialPageRoute(builder: (context) => LogOut()));
         break;
       default:
         break;

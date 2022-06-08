@@ -2,6 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:moni_test/pages/authentication/widgets/textfield.dart';
 
  class Passwordfield extends StatefulWidget {
+
+   final TextEditingController controller;
+
+   const Passwordfield({
+     required this.controller
+   });
+
    @override
    _PasswordfieldState createState() => _PasswordfieldState();
  }
@@ -10,12 +17,19 @@ import 'package:moni_test/pages/authentication/widgets/textfield.dart';
    ValueChanged<String> onChanged = (value) {};
    String hintText = "Password";
    bool hidepassword = true;
-
+   late TextEditingController controller;
 
    @override
+  void initState() {
+     controller = widget.controller;
+     super.initState();
+  }
+
+  @override
    Widget build(BuildContext context) {
      return TextfieldContainer(
        child: TextField(
+         controller: controller,
          obscureText: hidepassword,
          onChanged: onChanged,
          decoration: InputDecoration(

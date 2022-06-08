@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:moni_test/controllers/authController.dart';
 
 class DrawerHead extends StatefulWidget {
   @override
@@ -28,7 +27,7 @@ class _DrawerHeadState extends State<DrawerHead> {
             ),
           ),
           Text("ShopiU", style: TextStyle(color: Colors.black, fontSize: 20),),
-          Text("username")
+          Text("Shopping just for you")
         ],
       ),
     );

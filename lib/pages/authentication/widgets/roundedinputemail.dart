@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:moni_test/pages/authentication/widgets/textfield.dart';
 
-class RoundedInputEmail extends StatelessWidget {
+class RoundedInput extends StatelessWidget {
 
   final String hintText;
   final IconData icon;
   final ValueChanged<String> onChanged;
 
-  RoundedInputEmail({Key? key, required this.hintText, required this.icon, required this.onChanged}) : super(key: key);
+  RoundedInput({Key? key, required this.hintText, required this.icon, required this.onChanged}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

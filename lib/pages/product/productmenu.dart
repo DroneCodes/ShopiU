@@ -23,12 +23,10 @@ class _ProductMenuState extends State<ProductMenu> {
           children: [
             ProductList(
               press: () {
-               setState(() {
                  Navigator.push(context,
                      MaterialPageRoute(builder: (context) {
                        return Gaming();
                      }));
-               });
               },
               imageurl: "assets/images/kindpng_174783.png",
               item: "Gaming",
@@ -37,11 +35,7 @@ class _ProductMenuState extends State<ProductMenu> {
               height: 20,
             ),
             ProductList(
-                press: () {
-                  setState(() {
-
-                  });
-                },
+                press: () {},
                 imageurl: "assets/images/kindpng_4886049.png",
                 item: "Sneakers",
                 subtitle: "Puma, Nike, Addidas")

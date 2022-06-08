@@ -13,7 +13,7 @@ class ProductList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: GestureDetector(
-        onTap: press(),
+        onTap: () {press();},
         child: ListTile(
           leading: CircleAvatar(
             radius: 20,
