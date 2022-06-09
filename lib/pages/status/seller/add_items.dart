@@ -27,7 +27,7 @@ class _AddItemState extends State<AddItem> {
     UploadTask? uploadTask;
 
     Future uploadFile() async{
-      final path = 'files/${pickedFile!.name}';
+      final path = 'Items/${pickedFile!.name}';
       final file = File(pickedFile!.path!);
 
       final ref = FirebaseStorage.instance.ref().child(path);
@@ -185,8 +185,12 @@ class _AddItemState extends State<AddItem> {
     border: const OutlineInputBorder(),
   );
 
+  // Stream<List<SellerItem>> readItems() => FirebaseFirestore.instance
+  //     .collection("Items").snapshots().map((snapshot) =>
+  //     snapshot.docs.map((doc) => SellerItem;
+
   Future createItem(SellerItem item) async {
-    final docUser = FirebaseFirestore.instance.collection('Items').doc();
+    final docUser = FirebaseFirestore.instance.collection('item').doc();
     item.id = docUser.id;
 
     final json = item.toJson();
@@ -220,6 +224,9 @@ class SellerItem {
     'price': price,
     'address': address
   };
+
+  static SellerItem fromJson(Map<String, dynamic> json) => SellerItem(
+      name: json['name'], quantity: json['quantity'], number: json['number'], price: json['price'], address: json['address']);
 }
 
 

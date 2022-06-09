@@ -1,16 +1,14 @@
-# moni_test
+# ShopiU
 
-A new Flutter project.
-
+A shopping application aimed at enabling SMEs with the opportunity to get better reach
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+- This project makes use of the Provider to manage it's state and
+- also implements the use of firebase to save and fetch data
+- It also uses F=firebase for authentication 
+- It is also for now opensource and we encourage people who are willing to make a contibutions to do
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+- Thank you all :)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
